@@ -2,16 +2,22 @@ interface GameCardProps {
   title: string;
   releaseDate: string;
   genre: string;
+  image: string;
 }
-export default function GameCard({ title, releaseDate, genre }: GameCardProps) {
+export default function GameCard({
+  title,
+  releaseDate,
+  genre,
+  image,
+}: GameCardProps) {
   const formattedDate = releaseDate.substring(0, 10);
 
   return (
     <div className="flex flex-col gap-4">
       <div className="relative h-72 overflow-hidden">
         <img
-          src="https://picsum.photos/400/300"
-          alt="Game Cover"
+          src={image}
+          alt={`${title} cover`}
           className="absolute inset-0 w-full h-full object-cover rounded-xl"
         />
       </div>

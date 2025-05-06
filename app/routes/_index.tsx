@@ -3,6 +3,7 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 import GameCard from "~/components/GameCard";
+import gamelogLogo from "~/assets/svg/gamelog-logo.svg";
 
 export const meta: MetaFunction = () => {
   return [
@@ -19,6 +20,7 @@ export async function loader() {
       id: true,
       title: true,
       releaseDate: true,
+      image: true,
       category: {
         select: {
           title: true,
@@ -43,6 +45,7 @@ export default function Index() {
             key={game.id}
             title={game.title}
             releaseDate={game.releaseDate}
+            image={game.image || gamelogLogo}
             genre={game.category?.title || "Unknown"}
           />
         </div>
