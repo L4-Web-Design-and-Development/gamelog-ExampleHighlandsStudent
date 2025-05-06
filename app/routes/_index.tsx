@@ -25,16 +25,16 @@ export default function Index() {
   console.log({ games });
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div>
-        <h1 className="text-4xl font-bold">Hello, World!</h1>
-        <GameCard />
-        {games.map((game) => (
-          <div key={game.id}>
-            <h2>{game.title}</h2>
-          </div>
-        ))}
-      </div>
+    <div className="container mx-auto px-8 grid grid-cols-3 gap-8">
+      {games.map((game) => (
+        <div key={game.id}>
+          <GameCard
+            key={game.id}
+            title={game.title}
+            releaseDate={game.releaseDate}
+          />
+        </div>
+      ))}
     </div>
   );
 }
