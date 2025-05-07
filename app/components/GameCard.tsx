@@ -2,13 +2,13 @@ interface GameCardProps {
   title: string;
   releaseDate: string;
   genre: string;
-  image: string;
+  imageUrl: string;
 }
 export default function GameCard({
   title,
   releaseDate,
   genre,
-  image,
+  imageUrl,
 }: GameCardProps) {
   const formattedDate = releaseDate.substring(0, 10);
 
@@ -16,13 +16,13 @@ export default function GameCard({
     <div className="flex flex-col gap-4">
       <div className="relative h-72 overflow-hidden">
         <img
-          src={image}
+          src={imageUrl}
           alt={`${title} cover`}
           className="absolute inset-0 w-full h-full object-cover rounded-xl"
         />
       </div>
       <div className="flex justify-between">
-        <div className="flex flex-col justify-between w-2/3">
+        <div className="flex flex-col justify-between w-2/3 pr-4">
           <h3 className="font-bold text-2xl text-slate-300">{title}</h3>
           <div>
             <p className="text-cyan-300 uppercase text-sm font-semibold mb-1">
@@ -34,10 +34,10 @@ export default function GameCard({
           </div>
         </div>
         <div className="flex flex-col gap-7 w-1/3">
-          <button className="border-2 border-cyan-300 text-cyan-300 p-2 rounded-md">
-            Edit
+          <button className="border-2 border-cyan-300 text-cyan-300 p-2 rounded-md transition hover:bg-cyan-50/10">
+            View
           </button>
-          <button className="border-2 border-red-300 text-red-300 p-2 rounded-md">
+          <button className="border-2 border-red-300 text-red-300 p-2 rounded-md transition hover:bg-red-50/10">
             Delete
           </button>
         </div>

@@ -3,7 +3,7 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 import GameCard from "~/components/GameCard";
-import gamelogLogo from "~/assets/svg/gamelog-logo.svg";
+import fallbackImage from "~/assets/svg/gamecard-fallback-image.svg";
 
 export const meta: MetaFunction = () => {
   return [
@@ -20,7 +20,7 @@ export async function loader() {
       id: true,
       title: true,
       releaseDate: true,
-      image: true,
+      imageUrl: true,
       category: {
         select: {
           title: true,
@@ -29,13 +29,13 @@ export async function loader() {
     },
   });
 
+  prisma.$disconnect();
+
   return json({ games });
 }
 
 export default function Index() {
   const { games } = useLoaderData<typeof loader>();
-
-  console.log({ games });
 
   return (
     <div className="container mx-auto px-8 grid grid-cols-3 gap-8">
@@ -45,7 +45,7 @@ export default function Index() {
             key={game.id}
             title={game.title}
             releaseDate={game.releaseDate}
-            image={game.image || gamelogLogo}
+            imageUrl={game.imageUrl || fallbackImage}
             genre={game.category?.title || "Unknown"}
           />
         </div>
