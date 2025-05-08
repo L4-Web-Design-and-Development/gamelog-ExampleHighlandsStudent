@@ -1,6 +1,7 @@
 interface GameCardProps {
   title: string;
   releaseDate: string;
+  categoryTitle: string;
 }
 export default function GameCard(props: GameCardProps) {
   const formattedDate = props.releaseDate.slice(0, 10);
@@ -17,7 +18,9 @@ export default function GameCard(props: GameCardProps) {
       <div className="flex justify-between">
         <div className="flex flex-col justify-between w-2/3">
           <h3 className="font-bold text-2xl text-slate-300">{props.title}</h3>
-          <p className="text-cyan-300 uppercase text-sm font-semibold">Genre</p>
+          <p className="text-cyan-300 uppercase text-sm font-semibold">
+            {props.categoryTitle}
+          </p>
           <p className="text-slate-200/60 text-sm font-semibold">
             {formattedDate}
           </p>
