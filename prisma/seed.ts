@@ -5,19 +5,23 @@ const prisma = new PrismaClient();
 async function seed() {
   const games = [
     {
-      title: "The Legend of Zelda: Breath of the Wild",
-      description: "An open-world adventure game set in the kingdom of Hyrule.",
-      price: 59.99,
+      title: "Mario Kart 9",
+      description: "An open-world adventure game set in the kingdom of Mario.",
+      price: 79.99,
       rating: 4.9,
       releaseDate: new Date("2017-03-03"),
+      imageUrl:
+        "https://res.cloudinary.com/dsaau6u7e/image/upload/v1746700327/mario-kart-9_tfablo.webp",
     },
     {
-      title: "The Witcher 3: Wild Hunt",
+      title: "Diablo 4",
       description:
         "An action RPG set in a fantasy world full of monsters and magic.",
       price: 39.99,
       rating: 4.8,
       releaseDate: new Date("2015-05-19"),
+      imageUrl:
+        "https://res.cloudinary.com/dsaau6u7e/image/upload/v1746700908/diablo-4_bkfqct.webp",
     },
     {
       title: "Red Dead Redemption 2",
@@ -25,6 +29,8 @@ async function seed() {
       price: 59.99,
       rating: 4.7,
       releaseDate: new Date("2018-10-26"),
+      imageUrl:
+        "https://res.cloudinary.com/dsaau6u7e/image/upload/v1746700181/cld-sample-5.jpg",
     },
     {
       title: "God of War",
@@ -32,6 +38,8 @@ async function seed() {
       price: 49.99,
       rating: 4.9,
       releaseDate: new Date("2018-04-20"),
+      imageUrl:
+        "https://res.cloudinary.com/dsaau6u7e/image/upload/v1746700181/cld-sample-4.jpg",
     },
     {
       title: "Minecraft",
@@ -40,6 +48,8 @@ async function seed() {
       price: 26.95,
       rating: 4.8,
       releaseDate: new Date("2011-11-18"),
+      imageUrl:
+        "https://res.cloudinary.com/dsaau6u7e/image/upload/v1746700181/cld-sample-2.jpg",
     },
     {
       title: "Fortnite",
@@ -48,6 +58,8 @@ async function seed() {
       price: 0.0,
       rating: 4.5,
       releaseDate: new Date("2017-07-25"),
+      imageUrl:
+        "https://res.cloudinary.com/dsaau6u7e/image/upload/v1746700181/cld-sample-3.jpg",
     },
     {
       title: "Cyberpunk 2077",
