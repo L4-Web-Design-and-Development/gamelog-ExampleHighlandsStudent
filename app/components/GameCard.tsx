@@ -28,7 +28,7 @@ export default function GameCard({
           className="absolute inset-0 w-full h-full object-cover rounded-xl transition duration-300 group-hover:brightness-50"
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-          <span className="border-2 border-cyan-300 text-cyan-300 px-8 py-3 text-2xl rounded-md bg-gray-900/50 hover:bg-cyan-50/30 transition">
+          <span className="border-2 border-cyan-300 text-cyan-300 px-8 py-3 text-2xl rounded-lg bg-gray-900/50 hover:bg-cyan-50/30 transition">
             Edit
           </span>
         </div>
