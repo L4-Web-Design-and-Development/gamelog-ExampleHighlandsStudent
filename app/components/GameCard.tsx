@@ -18,12 +18,20 @@ export default function GameCard({
 
   return (
     <div className="flex flex-col gap-4">
-      <Link to={`/edit-game/${id}`} className="relative h-72 overflow-hidden">
+      <Link
+        to={`/edit-game/${id}`}
+        className="relative h-72 overflow-hidden group rounded-xl"
+      >
         <img
           src={imageUrl}
           alt={`${title} cover`}
-          className="absolute inset-0 w-full h-full object-cover rounded-xl"
+          className="absolute inset-0 w-full h-full object-cover rounded-xl transition duration-300 group-hover:brightness-50"
         />
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+          <span className="border-2 border-cyan-300 text-cyan-300 px-8 py-3 text-2xl rounded-md bg-gray-900/50 hover:bg-cyan-50/30 transition">
+            Edit
+          </span>
+        </div>
       </Link>
       <div className="flex justify-between">
         <div className="flex flex-col justify-between w-2/3 pr-4">
