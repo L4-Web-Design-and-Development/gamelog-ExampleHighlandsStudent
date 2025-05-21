@@ -43,6 +43,7 @@ export default function Index() {
         <div key={game.id}>
           <GameCard
             key={game.id}
+            id={game.id}
             title={game.title}
             releaseDate={game.releaseDate}
             imageUrl={game.imageUrl || fallbackImage}

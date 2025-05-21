@@ -1,10 +1,14 @@
+import { Form } from "@remix-run/react";
+
 interface GameCardProps {
+  id: string;
   title: string;
   releaseDate: string;
   genre: string;
   imageUrl: string;
 }
 export default function GameCard({
+  id,
   title,
   releaseDate,
   genre,
@@ -37,9 +41,14 @@ export default function GameCard({
           <button className="border-2 border-cyan-300 text-cyan-300 p-2 rounded-md transition hover:bg-cyan-50/10">
             View
           </button>
-          <button className="border-2 border-red-300 text-red-300 p-2 rounded-md transition hover:bg-red-50/10">
-            Delete
-          </button>
+          <Form action={`/delete-game/${id}`} method="post">
+            <button
+              type="submit"
+              className="border-2 border-red-300 text-red-300 p-2 rounded-md transition hover:bg-red-50/10 w-full"
+            >
+              Delete
+            </button>
+          </Form>
         </div>
       </div>
     </div>
